@@ -12,12 +12,12 @@ public class Facebook {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://www.facebook.com/");
-		
 		Thread.sleep(2000);
 		
 		WebElement createNewAccountButton = driver.findElement(By.xpath("(//a[normalize-space()='Create New Account'])[1]"));
 		createNewAccountButton.click();
 		Thread.sleep(5000);
+		
 		WebElement firstName = driver.findElement(By.name("firstname"));
 		firstName.sendKeys("ashu");
 		
@@ -30,21 +30,27 @@ public class Facebook {
 		WebElement password = driver.findElement(By.name("reg_passwd__"));
 		password.sendKeys("123ashu");
 		Thread.sleep(2000);
+		
 		Select dateDropdown = new Select(driver.findElement(By.name("birthday_day")));
 		dateDropdown.selectByValue("24");
 		Thread.sleep(2000);
+		
 		Select monthDropdown = new Select(driver.findElement(By.name("birthday_month")));
 		monthDropdown.selectByValue("12");
 		Thread.sleep(2000);
+		
 		Select yearDropdown = new Select(driver.findElement(By.name("birthday_year")));
 		yearDropdown.selectByValue("1996");
 		Thread.sleep(2000);
+		
 		WebElement femaleRadioBtn = driver.findElement(By.xpath("(//label[normalize-space()='Female'])[1]"));
 		femaleRadioBtn.click();
 		Thread.sleep(2000);
+		
 		WebElement signUpBtn = driver.findElement(By.name("websubmit"));
 		signUpBtn.click();
 		Thread.sleep(2000);
+		
 		System.out.println("Performed click action");
 		driver.quit();
 		
